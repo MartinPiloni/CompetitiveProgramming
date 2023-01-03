@@ -2,18 +2,11 @@
 using namespace std;
 
 using ll = long long;
-
-void setIO(string name = "") {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-	if ((int) name.size()) {
-		freopen((name + ".in").c_str(), "r", stdin);
-		freopen((name + ".out").c_str(), "w", stdout);
-	}
-}
+using str = string;
 
 int main() {
-	setIO();
+	ios::sync_with_stdio(0);
+	cin.tie(0);
 
     return 0;
 }
