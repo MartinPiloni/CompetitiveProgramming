@@ -12,7 +12,7 @@ int main() {
 	cin >> k;
 
 	for (int i = 0; i < k; i++) {
-		cout << (char)(i + 65);
+		cout << char('A' + i);
 	}
 
 	cout << "\n";
