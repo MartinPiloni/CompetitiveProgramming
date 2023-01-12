@@ -2,7 +2,6 @@
 using namespace std;
 
 using ll = long long;
-using db = double;
 using str = string;
 
 #define sz(x) (int) (x).size()
