@@ -4,6 +4,8 @@ using namespace std;
 using ll = long long;
 using str = string;
 
+#define sz(x) int((x).size())
+
 void setIO(string name = "") {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
