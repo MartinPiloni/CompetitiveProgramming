@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define pb push_back
+#define fst first
+#define snd second
+#define sz(x) ((int)x.size())
+#define all(x) x.begin(),x.end()
+
+using ll = long long;
+using str = string;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int t;
+    cin >> t;
+    while (t--) {
+        int n;
+        cin >> n;
+        vector<ll> v(n);
+        ll sum = 0;
+        for (int i = 0; i < n; i++) {
+            cin >> v[i];
+            sum += v[i];
+        }
+
+        if (sqrt(sum) == (ll)sqrt(sum)) cout << "YES\n";
+        else cout << "NO\n";
+    }
+
+    return 0;
+}
