@@ -17,33 +17,31 @@ int main() {
     int n;
     cin >> n;
     
-    vector<pair<pair<int, int>, pair<int,int>>> v(2 * n);
+    vector<vector<int>> v;
     vector<int> end;
     map<int, int> start_at;
     int x, y;
-    for (int i = 0; i < 2 * n; i += 2) {
+    for (int i = 0; i < n; i++) {
         cin >> x >> y;
         x--;
+        v.pb({x, 0, y, i});
+        v.pb({y, 1, -x, i});
         start_at[x]++;
         end.pb(y);
-        v[i].fst = {x, 0};
-        v[i].snd = {y, i / 2};
-        v[i + 1].fst = {y, 1};
-        v[i + 1].snd = {-x, i / 2};
     }
     sort(all(v));
     
     vector<bool> can(n);
     set<pair<int, int>> s;
     ll ans = -1;
-    for (int i = 0; i < 2 * n; i++) {
-        if (v[i].fst.snd == 0) {
-            if (!s.empty() || start_at[v[i].fst.fst] > 1) can[v[i].snd.snd] = true;
-            s.insert({end[v[i].snd.snd], v[i].snd.snd});
+    for (int i = 0; i < sz(v); i++) {
+        if (v[i][1] == 0) {
+            if (!s.empty() || start_at[v[i][0]] > 1) can[v[i][3]] = true;
+            s.insert({end[v[i][3]], v[i][3]});
         } else {
-            s.erase({v[i].fst.fst, v[i].snd.snd});
-            if (can[v[i].snd.snd] && !s.empty()) {
-                ans = v[i].snd.snd + 1;
+            s.erase({v[i][0], v[i][3]});
+            if (can[v[i][3]] && !s.empty()) {
+                ans = v[i][3] + 1;
                 break;
             }
             if (sz(s) == 1) can[s.begin()->snd] = false;
