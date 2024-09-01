@@ -6,6 +6,7 @@ using namespace std;
 #define snd second
 #define sz(x) ((int)x.size())
 #define all(x) x.begin(),x.end()
+#define dbg(x) cerr << #x << ": " << (x) << endl
 
 using ll = long long;
 using str = string;
