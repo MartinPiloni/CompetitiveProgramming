@@ -38,8 +38,7 @@ signed main() {
       auto can = [&](ll m) {
         ld aux = avg_sum - v[n - 1];
         aux += v[n - 1] + m;
-        aux /= n;
-        if (aux / 2 > v[n / 2]) return true;
+        if (aux > 2 * n * v[n / 2]) return true;
         else return false;
       };
 
